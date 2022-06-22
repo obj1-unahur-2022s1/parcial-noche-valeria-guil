@@ -1,24 +1,35 @@
 import comidas.*
+
 describe "Test de Comidas" {
+	const hamburguesaCarne1 = new HamburguesaCarne(pan = panCasero) 
+	const hamburguesaVegetariana1= new HamburguesaVegetariana(pan = panMasaMadre, legumbre = "garbanzos") 
+	const provoleta1 = new Provoleta(peso = 190,tieneEspecias = true) 
+	var parrillada1 = new Parrillada()
+	var asado = new Corte(calidad = 10, peso = 250)
+	var chorizo = new Corte(calidad = 8, peso = 200)
+	var entrania = new Corte(calidad = 7, peso = 50)
 	
-	method initialize() {
-		
+	method initialize() {	
+		parrillada1.agregarCorte(asado)	
+		parrillada1.agregarCorte(chorizo)
+		parrillada1.agregarCorte(entrania)
 	}
 	
 	test "Valoración de la Hambruguesa de Carne con pan casero" {
-		assert.equals(0,0)	
+		assert.equals(80,hamburguesaCarne1.valoracion())	
 	}
 
 	test "Valoración de la Hambruguesa Vegetariana, con pan de masaMadre y de garbanzos como legumbre" {
-		assert.equals(0,0)	
+		assert.equals(122,hamburguesaVegetariana1.valoracion())	
 	}	
 	
 	test "Provoleta, de peso 190 y con especias." {
-		assert.that(true)	
+		assert.that(provoleta1.esEspecial())	
 	}
 	
 	test "Parrillada" {
-		assert.equals(0,0)	
+		assert.equals(147,parrillada1.valoracion())	
 	}
 	
 }
+
