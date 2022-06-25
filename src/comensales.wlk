@@ -1,3 +1,6 @@
+/*
+ *Recorda que podes unar el mensaje x.even() a un número para saber si es par
+ */
 import comidas.*
 
 class Comensales {
@@ -35,7 +38,7 @@ class PaladarFino inherits Comensales {
 	override method estaSatisfecho() = super() and self.cantidadComidaIngeridaEsPar()
 	
 	method cantidadComidaIngeridaEsPar() =
-		self.cantidadComidasIngeridas() == 0.abs() 
+		self.cantidadComidasIngeridas().even()
 }
 
 
