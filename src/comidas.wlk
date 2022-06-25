@@ -1,3 +1,8 @@
+/*
+1) El ```cantidadLetras()``` la cantidad de letras de la legumbre * 2 no podia ser mayor que 17. Habia que usar el min()
+2) Em ```maximaCalidad()``` te falto pedir la calidad() al objeto que era el maximo porque sino en la cuenta de valoracion	te da error
+3) Quizás en corte habia que agregar el atributo nombre
+ */
 class Plato {
 	
 	method peso()
@@ -51,10 +56,10 @@ class HamburguesaVegetariana inherits HamburguesaCarne {
 	override method valoracion() = super() + self.plus()	
 	
 	method plus() =
-		self.cantidadLetras() * 2
+		self.cantidadLetras() 
 		
 	method cantidadLetras() =
-		17.max(legumbre.size())
+		17.min(legumbre.size() * 2 )
 }
 
 class Parrillada inherits Plato {
@@ -69,7 +74,7 @@ class Parrillada inherits Plato {
 	method cantidadDeCortes() = cortesPedidos.size()
 	
 	method maximaCalidad()= 
-		cortesPedidos.max({c => c.calidad()})
+		cortesPedidos.max({c => c.calidad()}).calidad()
 		
 	method agregarCorte(unCorte) {
 		cortesPedidos.add(unCorte)
